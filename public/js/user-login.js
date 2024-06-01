@@ -27,7 +27,7 @@ function postUserLogin() {
       localStorage.setItem("semester", res.semester);
       localStorage.setItem("user_name", res.user_name);
       
-      window.location.href = "http://localhost:3000/home";
+      window.location.href = "/home";
     })
     .catch((err) => {
       console.log("Error loggin in");

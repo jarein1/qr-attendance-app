@@ -7,7 +7,7 @@
                 <h4>Student Attendance</h4>
             </div>
             <br>
-            <form action="/admin/attendance" method="get">
+            <form id="attendance-form">
             <div class="Details">
             <div class="sem">
                 <div class="select-menu">
@@ -67,7 +67,7 @@
             <br>
             <div class="tables">
 
-                <table>
+                <table id="attendance-table">
                     <tr>
                         <th>Roll no.</th>
                         <th>Student Name</th>
@@ -75,32 +75,12 @@
                         <th>Classes Attended</th>
                         <th>Percentage</th>
                     </tr>
-                    <% studentList.forEach((student, index) => { %>
-
-                        <tr>
-                            <td>
-                                <%=index+1%>
-                            </td>
-                            <td>
-                                <%=student.first_name + " " + student.last_name%>
-                            </td>
-                            <td>
-                                <%=totalClass%>
-                            </td>
-                            <td>
-                                <%=student.totalPresent%>
-                            </td>
-                            <td>
-                                <%=(student.totalPresent/totalClass)*100%>
-                            </td>
-                        </tr>
-
-                        <% }) %>
-
                 </table>
             </div>
             <br>
             <br>
 
             </body>
+            
+            <script src="/js/adminAttendance.js"></script>
             <%- include('../partials/footer')%>
