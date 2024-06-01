@@ -1,0 +1,37 @@
+<%- include("../partials/header")%>
+<link rel="stylesheet" href="/css/stu-style.css">
+<%- include("../partials/header-closer")%>
+<body>
+<%- include('../partials/navbar') %>
+<br>
+    <br>
+    <div class="record">
+        <h3>Attendance Record</h3>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="tables">
+
+    <table>
+        <tr>
+            <th>Sl no.</th>
+            <th>Course</th>
+            <th>Total Classes</th>
+            <th>Total Attended</th>
+            <th>Percentage</th>
+        </tr>
+        <% attendanceData.map((attendance, index) => {%>
+        <tr>
+            <td><%=index+1%></td>
+            <td><%=attendance.name%></td>
+            <td><%=attendance.totalDays%></td>
+            <td><%=attendance.presentDays%></td>
+            <td><%=(attendance.presentDays / attendance.totalDays)*100%>%</td>
+        </tr>
+        <% })%>
+    </table> 
+     </div>
+    
+</body>
+<%- include('../partials/footer')%>

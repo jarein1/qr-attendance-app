@@ -1,0 +1,59 @@
+<%- include('../partials/header')%>
+    <link rel="stylesheet" href="/css/admin.css">
+    <%- include('../partials/header-closer')%>
+        <%- include('../partials/navbar')%>
+            <div class="welcome">
+                <h4>Manage Course</h4>
+            </div>
+            <br>
+            <br>
+            <div class="sear">
+                <div class="manage-search">
+                    <!-- <p>Search:</p> -->
+                    <form action="#">
+                        <input type="text" placeholder="Search" name="search" style="padding: 8px;">
+                        <button type="submit"><i class="fa fa-search"; style="font-size: 20px; padding:5px;border-radius:10px;"></i></button>
+                    </form>
+                </div>
+                <div class="che">
+                    <form class="generate" action="/admin/create-course" method="get">
+                        <button type="submit">Create</button>
+                    </form>
+                </div>
+            </div>
+
+            <br>
+            <div class="tables">
+
+                <table>
+                    <tr>
+                        <th>Roll no.</th>
+                        <th>Course Name</th>
+                        <th>Manage</th>
+                    </tr>
+                    <% courseList.forEach((course, index) => { %>
+
+                        <tr>
+                            <td>
+                                <%=index+1%>
+                            </td>
+                            <td>
+                                <%=course.name%>
+                            </td>
+                            <td>
+                                <div class="manage-but">
+                                    <a href="/admin/update-course?id=<%=course._id%>" style="padding: 5px;background-color:rgb(34, 235, 40);border:none ;border-radius:5px;color:white">Edit</a>
+                                    <a href="/admin/delete-course?id=<%=course._id%>" style="padding: 5px;background-color:rgb(244, 16, 16);border:none ;border-radius:5px;color:white">Remove</a>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <% }) %>
+
+                </table>
+            </div>
+            <br>
+            <br>
+
+            </body>
+            <%- include('../partials/footer')%>

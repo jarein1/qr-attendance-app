@@ -1,0 +1,30 @@
+<%- include('../partials/header')%>
+<link rel="stylesheet" href="/css/admin.css" >
+<%- include('../partials/header-closer')%>
+<body>
+<%- include('../partials/navbar')%>
+<div class="welcome">
+    <h4>Update Course</h4>
+</div>
+<br>
+ 
+<div class="dept">
+<div class="form">
+    <div class="Details">
+    <form action="/admin/update-course" method="post">
+        <input type="hidden" name="courseId" value="<%=courseInfo._id.toString()%>" >
+        <label for="new-course">Course Name:</label>
+        <input type="text" id="new-course" name="course" placeholder="Course Name" value="<%=courseInfo.name%>"> 
+     
+    <br>
+    <div class="b-create">
+        <div class="generate" >
+            <button type="submit" >Create</button>
+        </div>
+    </div>
+    </form>
+    </div>
+    </div>
+</div>
+</body>
+<%- include('../partials/footer')%>

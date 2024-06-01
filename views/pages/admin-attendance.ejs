@@ -1,0 +1,106 @@
+<%- include('../partials/header')%>
+<link rel="stylesheet" href="/css/admin.css" >
+<%- include('../partials/header-closer')%>
+<body>
+        <%- include('../partials/navbar')%>
+            <div class="welcome">
+                <h4>Student Attendance</h4>
+            </div>
+            <br>
+            <form action="/admin/attendance" method="get">
+            <div class="Details">
+            <div class="sem">
+                <div class="select-menu">
+                    <div class="course">Course: </div>
+                        <select name="courseId">
+                            <option value="">--- SELECT ---</option>
+                            <% courseList.forEach((course) => { %>
+                                <option value="<%=course._id%>"><%=course.name%></option>
+                            <% })%>
+                        </select>
+                </div>
+            </div>
+
+            <div class="sem">
+                <div class="select-menu">
+                    <div class="course">Department: </div>  
+                        <select name="departmentId">
+                            <option value="">--- SELECT ---</option>
+                            <% departmentList.forEach((dept) => { %>
+                                <option value="<%=dept._id%>"><%=dept.name%></option>
+                            <% })%>
+                        </select>
+                </div>
+            </div>
+
+            <div class="sem">
+                <div class="select-menu">
+                    <div class="course">Semester: </div>  
+                        <select name="semester">
+                        <option value="">--- SELECT ---</option>
+                        <% semesterList.forEach( (semester) => {%>
+                            <option value="<%=semester.value%>"><%=semester.semester%></option>
+                        <% }) %>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+                <div class="che">   
+                    <a class="generate">
+                        <button type="submit" style="width: 4rem; background: #fff; border: 1px solid black; color: #000; margin-right: 1rem">Get</button>
+                    </a>
+                </div>
+            </form>
+
+            <br>
+            <div class="sear">
+                <div class="manage-search">
+                    <form  action="#">
+                    <input type="text" placeholder="Search" name="search" style="padding: 8px;">
+                    <button type="submit"><i class="fa fa-search"; style="font-size: 20px; padding:5px;border-radius:10px;"></i></button>
+                    </form>
+                </div>
+                
+            </div>
+
+            <br>
+            <div class="tables">
+
+                <table>
+                    <tr>
+                        <th>Roll no.</th>
+                        <th>Student Name</th>
+                        <th>Total Classes</th>
+                        <th>Classes Attended</th>
+                        <th>Percentage</th>
+                    </tr>
+                    <% studentList.forEach((student, index) => { %>
+
+                        <tr>
+                            <td>
+                                <%=index+1%>
+                            </td>
+                            <td>
+                                <%=student.first_name + " " + student.last_name%>
+                            </td>
+                            <td>
+                                <%=totalClass%>
+                            </td>
+                            <td>
+                                <%=student.totalPresent%>
+                            </td>
+                            <td>
+                                <%=(student.totalPresent/totalClass)*100%>
+                            </td>
+                        </tr>
+
+                        <% }) %>
+
+                </table>
+            </div>
+            <br>
+            <br>
+
+            </body>
+            <%- include('../partials/footer')%>

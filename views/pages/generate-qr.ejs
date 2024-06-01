@@ -1,0 +1,18 @@
+<%- include('../partials/header')%>
+    <link rel="stylesheet" href="/css/admin.css" />
+    <%- include('../partials/header-closer')%>
+
+        <body>
+            <%- include('../partials/navbar')%>
+                <div class="welcome">
+                    <h4>QR for, <%=courseName%></h4>
+                </div>
+                <br />
+                <br />
+                <div id="qrcode" style="max-width: 300px; margin: 0 auto">
+                    <%-qrcode%>
+                </div>
+                <br />
+                <br />
+        </body>
+        <%- include('../partials/footer')%>

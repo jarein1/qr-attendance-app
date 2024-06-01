@@ -1,0 +1,373 @@
+* {
+  margin: 0;
+  padding: 0;
+  /* overflow: hidden; */
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+  height: 70px;
+  width: 100%;
+  overflow: hidden;
+  background-color: #ffffff;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  box-shadow: black 2px 0px 10px;
+}
+
+.navbar a {
+  float: left;
+  font-size: 20px;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 22px;
+  border: none;
+  outline: none;
+  color: rgb(0, 0, 0);
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover .dropdown:hover .dropbtn {
+  background-color: #ddd;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropbtn:hover {
+  background-color: #ddd;
+}
+
+.navbar a:hover,
+.dropdown:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.logo {
+  display: flex;
+  padding-left: 20px;
+  height: 65px;
+}
+
+.navbar .signout-icon {
+  display: flex;
+  font-size: 30px;
+  float: right;
+}
+
+.navin {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* <!-- --------------Welcome message---------------  --> */
+
+.welcome h3 {
+  font-size: 30px;
+  position: relative;
+  margin: 5%;
+}
+
+.record {
+  margin-left: 5%;
+  float: left;
+}
+
+/* -------------------- course choosing style ------------------  */
+
+.select-menu {
+  margin-top: -20px;
+  margin-bottom: 30px;
+  /* background-color: aquamarine; */
+  display: flex;
+  /* margin:20px; */
+  text-align: center;
+  justify-content: center;
+}
+
+.course {
+  font-size: 25px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  padding-right: 15px;
+}
+
+.sBtn-text {
+  margin-right: 50px;
+}
+
+.select-menu .select-btn {
+  position: relative;
+  text-align: center;
+  display: flex;
+  height: 20px;
+  background: #dbdbdb;
+  padding: 20px;
+  font-size: 20px;
+  font-weight: 400;
+  border-radius: 8px;
+  align-items: center;
+  cursor: pointer;
+  justify-content: space-between;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.select-btn i {
+  font-size: 30px;
+  transition: 0.3s;
+}
+
+.select-menu.active .select-btn i {
+  transform: rotate(-180deg);
+}
+
+.select-menu .options {
+  position: absolute;
+  padding: 10px;
+  margin-top: 70px;
+  margin-left: 90px;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  display: none;
+}
+
+.select-menu.active .options {
+  display: block;
+}
+
+.options .option {
+  display: flex;
+  height: 55px;
+  cursor: pointer;
+  padding: 0 16px;
+  border-radius: 8px;
+  align-items: center;
+  background: #fff;
+}
+
+.options .option:hover {
+  background: #f2f2f2;
+}
+
+.option i {
+  font-size: 25px;
+  /* margin-right: 10px; */
+}
+
+.option .option-text {
+  font-size: 18px;
+  color: #333;
+}
+
+/*-------------------- course choosing style ------------------  */
+
+.select-menu {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.course {
+  font-size: 20px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  padding-right: 15px;
+}
+
+.sBtn-text {
+  margin-right: 50px;
+}
+
+.select-menu .select-btn {
+  position: relative;
+  text-align: center;
+  display: flex;
+  height: 1px;
+  background: #dbdbdb;
+  padding: 20px;
+  font-size: 20px;
+  font-weight: 400;
+  border-radius: 8px;
+  align-items: center;
+  cursor: pointer;
+  justify-content: space-between;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.select-btn i {
+  font-size: 30px;
+  transition: 0.3s;
+}
+
+.select-menu.active .select-btn i {
+  transform: rotate(-180deg);
+}
+
+.select-menu .options {
+  position: absolute;
+  padding: 5px;
+  margin-top: 50px;
+  /* margin-left: 20px; */
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  display: none;
+}
+
+.select-menu.active .options {
+  display: block;
+}
+
+.options .option {
+  display: flex;
+  height: 55px;
+  cursor: pointer;
+  padding: 0 16px;
+  border-radius: 8px;
+  align-items: center;
+  background: #fff;
+}
+
+.options .option:hover {
+  background: #f2f2f2;
+}
+
+.option i {
+  font-size: 25px;
+  /* margin-right: 10px; */
+}
+
+.option .option-text {
+  font-size: 18px;
+  color: #333;
+}
+
+/* -------- Qr code ------- */
+
+.qr-code {
+  /* background-color: #ddd; */
+  height: 230px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.qr {
+  display: flex;
+  /* background-color: #ddd; */
+  height: 230px;
+  width: 230px;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+/* ------Generate------ */
+
+.generate {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  margin: 4%;
+}
+
+.generate button {
+  font-size: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgb(42, 214, 102);
+  cursor: pointer;
+  color: white;
+}
+
+.generate button:hover {
+  color: rgb(11, 37, 239);
+}
+
+/* ------- search button ------- */
+
+.sem {
+  /* background-color: aquamarine; */
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.search {
+  /* color: aqua; */
+  gap: 10px;
+  display: flex;
+}
+
+/* --------- table ------ */
+
+.record {
+  text-decoration: underline;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+}
+
+.sub {
+  text-decoration: underline;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+}
+
+.tables {
+  display: flex;
+  justify-content: center;
+  /* background-color: aqua; */
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 80%;
+  }
+  td,
+  th {
+    border: 1px solid #0a0a0a;
+    text-align: left;
+    padding: 10px;
+  }
+}

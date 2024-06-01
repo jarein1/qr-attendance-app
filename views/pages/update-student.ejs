@@ -1,0 +1,55 @@
+<%- include('../partials/header')%>
+<link rel="stylesheet" href="/css/admin.css">
+<%- include('../partials/header-closer')%>
+<body>
+    <%- include('../partials/navbar')%>
+    <div class="welcome">
+    <h4>Create Student</h4>
+    </div>
+    <br>
+    <!-- ---------------- Forms ---------------- -->
+        <div class="form">
+            <div class="Details">
+            <form action="/admin/update-student" method="post">
+                <input type="hidden" name="studentId" value="<%=studentInfo._id%>">
+                <label for="fname">First name:</label>
+                <input type="text" id="fname" name="firstName" placeholder="First Name" value="<%=studentInfo.first_name%>">
+                <label for="lname">Last name:</label>
+                <input type="text" id="lname" name="lastName" placeholder="Last Name" value="<%=studentInfo.last_name%>">
+            </div>
+            <div class="Details">
+                <label for="stu-dept">Department:</label>
+                <select id="stu-dept" name="department">
+                    <% departmentList.forEach((dept) => {%>
+                        <% if(dept._id.toString() === studentInfo.department_id.toString()){ %>
+                            <option value="<%=dept._id %>" selected><%=dept.name%></option>
+                        <% } else { %>
+                            <option value="<%=dept._id %>"><%=dept.name%></option>
+                        <% } %>
+                    <% }) %>
+                </select>
+                <label for="stu-sem">Semester:</label>
+                <select id="stu-sem" name="semester">
+                    <% semesterList.forEach(sem => {%>
+                        <% if(sem.value === studentInfo.semester){ %>
+                            <option value="<%=sem.value%>" selected><%=sem.semester%></option>
+                        <% } else { %>
+                            <option value="<%=sem.value%>"><%=sem.semester%></option>
+                        <% } %>
+                    <% })%>
+                </select>
+            </div>
+            <div class="Details">
+                <label for="stu-email">Email:</label>
+                <input type="email" id="stu-email" name="email" placeholder="Email" value="<%=studentInfo.email%>">
+            </div>
+            <div class="gene">
+                <div class="generate" >
+                    <button type="submit" >Create</button>
+                </div>
+            </div>
+            </form> 
+        </div>
+    
+</body>
+<%- include('../partials/footer')%>

@@ -1,0 +1,84 @@
+<%- include('../partials/header')%>
+<link rel="stylesheet" href="/css/admin.css" />
+<%- include('../partials/header-closer')%>
+
+<body>
+  <%- include('../partials/navbar')%>
+  <div class="welcome">
+    <h4>Manage Faculty</h4>
+  </div>
+  <br />
+  <br />
+  <div class="sear">
+    <div class="manage-search">
+      <form action="#">
+        <input
+          type="text"
+          placeholder="Search"
+          name="search"
+          style="padding: 8px"
+        />
+        <button type="submit">
+          <i
+            class="fa fa-search"
+            ;
+            style="font-size: 20px; padding: 5px; border-radius: 10px"
+          ></i>
+        </button>
+      </form>
+    </div>
+    <div class="che">
+      <a class="generate" href="/admin/create-faculty">
+        <button>Create</button>
+      </a>
+    </div>
+  </div>
+
+  <br />
+  <div class="tables">
+    <table>
+      <tr>
+        <th>Roll no.</th>
+        <th>Faculty Name</th>
+        <th>Faculty Email</th>
+        <th>Manage</th>
+      </tr>
+      <% facultyList.forEach((faculty, index) => { %>
+      <tr>
+        <td><%=index+1%></td>
+        <td><%=faculty.first_name+" "+faculty.last_name%></td>
+        <td><%=faculty.email%></td>
+        <td>
+          <div class="manage-but">
+            <a
+              href="/admin/update-faculty?id=<%=faculty._id%>"
+              style="
+                padding: 5px;
+                background-color: rgb(34, 235, 40);
+                border: none;
+                border-radius: 5px;
+                color: white;
+              "
+              >Edit</a
+            >
+            <a
+              href="/admin/delete-faculty?id=<%=faculty._id%>"
+              style="
+                padding: 5px;
+                background-color: rgb(244, 16, 16);
+                border: none;
+                border-radius: 5px;
+                color: white;
+              "
+              >Remove</a
+            >
+          </div>
+        </td>
+      </tr>
+      <% }) %>
+    </table>
+  </div>
+  <br />
+  <br />
+</body>
+<%- include('../partials/footer')%>

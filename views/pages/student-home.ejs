@@ -1,0 +1,24 @@
+<%- include("../partials/header")%>
+<link rel="stylesheet" href="/css/stu-style.css">
+<%- include("../partials/header-closer")%>
+<body>
+<%- include('../partials/navbar') %>
+<div class="welcome">
+    <h3><%=docHeader%></h3>
+</div>
+
+<br>
+<!-- ----------------Generate QR---------------- -->
+<div class="qr-code">
+    <a class="qr">
+        <img src="/images/Qr.png" alt="">
+    </a>
+</div>
+<!-- ----------------Generate Button---------------- -->
+<div class="gene">
+<a class="generate" style="margin: 5%;" href="/scan-qr">
+    <button type="submit">Scan</button>
+</a>
+</div>
+</body>
+</html>

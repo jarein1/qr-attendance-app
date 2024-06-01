@@ -1,0 +1,30 @@
+<%- include('../partials/header')%>
+<link rel="stylesheet" href="/css/admin.css" >
+<%- include('../partials/header-closer')%>
+<body>
+<%- include('../partials/navbar')%>
+<div class="welcome">
+    <h4>Update Department</h4>
+</div>
+<br>
+ 
+<div class="dept">
+<div class="form">
+    <div class="Details">
+    <form action="/admin/update-department" method="post">
+        <input type="hidden" name="departmentId" value="<%=departmentInfo._id%>" >
+        <label for="new-dept">Department Name:</label>
+        <input type="text" id="new-dept" name="department" placeholder="Department" value="<%=departmentInfo.name%>"> 
+     
+    <br>
+    <div class="b-create">
+        <div class="generate" >
+            <button type="submit" >Create</button>
+        </div>
+    </div>
+    </form>
+    </div>
+    </div>
+</div>
+</body>
+<%- include('../partials/footer')%>

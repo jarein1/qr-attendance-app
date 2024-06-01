@@ -1,0 +1,44 @@
+<%- include("../partials/header")%>
+<%- include("../partials/header-closer")%>
+<body>
+<%- include('../partials/navbar') %>
+<div class="welcome">
+    <h3><%=docHeader%></h3>
+</div>
+
+<form method="post" action="/generate-qr">
+<div class="select-menu">
+    <div class="course">Select Courses: </div>  
+    <div class="select-btn">
+        <select name="courseId">
+            <option value="">---SELECT---</option>
+            <% courseList.forEach((course) => {%>
+                <option value="<%=course.id%>"><%=course.name%></option>
+            <% })%>
+        </select>
+    </div>
+    <div class="course">Select Class Number: </div>  
+    <div class="select-btn">
+        <select name="classNumber">
+            <option value="">---SELECT---</option>
+            <option value=1 >1</option>
+            <option value=2 >2</option>
+            <option value=3 >3</option>
+        </select>
+    </div>
+</div>
+
+<br>
+<div class="qr-code">
+    <a class="qr" href="">
+        <img src="/images/Qr.png" alt="qr-code">
+    </a>
+</div>
+<div class="gene">
+<a class="generate">
+    <button type="submit" >Generate</button>
+</a>
+</form>
+
+</body>
+</html>

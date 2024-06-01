@@ -1,0 +1,46 @@
+<div class="navbar"> 
+        
+    <div class="logo"><img src="/images/logo.png" alt=""></div>
+    <div class="navin">
+    <div class="link">
+    <div class="dropdown">
+      <a href="<%=(user_role !== "admin" ? "/home" : "/admin/home")%>" style="display: block;">Home</a>
+    </div> 
+    <div class="dropdown">
+      <a href="<%=((user_role !== "admin") ? "/attendance" : "/admin/attendance")%>" style="display: block;">Attendance
+      </a>
+    </div> 
+    <% if(user_role === "admin"){ %> 
+        <div class="dropdown">
+            <button class="dropbtn">User
+            </button>
+              <div class="dropdown-content">
+                <a href="/admin/create-faculty">Create Faculty</a>
+                <a href="/admin/create-student">Create Student</a>
+                <a href="/admin/manage-faculty">Manage Faculty</a>
+                <a href="/admin/manage-student">Manage Student</a>
+              </div>
+        </div>
+    <% } %>
+    <% if(user_role === "admin"){ %> 
+        <div class="dropdown">
+        <button class="dropbtn">Course
+        </button>
+          <div class="dropdown-content">
+            <a href="/admin/create-course">Create Course</a>
+            <a href="/admin/create-department">Create Department</a>
+            <a href="/admin/manage-course">Manage Course</a>
+            <a href="/admin/manage-department">Manage Department</a>
+            <a href="/admin/assign-faculty">Assign Faculty</a>
+            <a href="/admin/assign-department">Assign Department</a>
+          </div>
+        </div> 
+   <% } %>
+</div>
+<div class="signout">
+      <a class="signout-icon" href="<%=(user_role!=='admin') ? '/logout' : '/admin/logout' %>" style="font-size: 20px;">Logout
+      </a>
+  </div>
+
+</div>
+</div>

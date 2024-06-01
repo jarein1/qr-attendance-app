@@ -1,0 +1,32 @@
+<%- include('../partials/header')%>
+<link rel="stylesheet" href="/css/admin.css" >
+<%- include('../partials/header-closer')%>
+<body>
+<%- include('../partials/navbar')%>
+<div class="welcome">
+    <h4>Update Faculty</h4>
+</div>
+<br>
+    <div class="form">
+        <div class="Details">
+        <form action="/admin/update-faculty" method="post">
+            <input type="hidden" name="facultyId" value="facultyInfo._id">
+            <label for="fac-fname">First name:</label>
+            <input type="text" id="fac-fname" name="first_name" placeholder="First Name" value="<%=facultyInfo.first_name%>">
+            <label for="fac-lname">Last name:</label>
+            <input type="text" id="fac-lname" name="last_name" placeholder="Last Name"  value="<%=facultyInfo.last_name%>">
+            <br>
+            <div style="padding-top: 2rem">
+                <label for="fac-email">Email:</label>
+                <input type="email" id="fac-email" name="email" placeholder="Email" value="<%=facultyInfo.email%>">
+            </div>
+            <div class="gene">
+                <div class="generate" style="margin: 5%;">
+                    <button type="submit">Create</button>
+                </div>
+            </div>
+          </form> 
+        </div>
+    </div>
+</body>
+<%- include('../partials/footer')%>

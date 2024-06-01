@@ -1,0 +1,29 @@
+<%- include('../partials/header') %>
+<link rel="stylesheet" href="/css/login-style.css">
+<%- include('../partials/header-closer')%>
+<body>
+    <div class="logo">
+        <img src="/images/l2.png" alt="" style="height: 150px ;">
+    </div>
+    <div class="container">
+    <div class="wrapper">
+        <form id="userLoginForm" >
+            <h1>Login to Dashboard </h1>
+            <div class="input-box">
+               
+                <input type="text" placeholder="email" name="email" required>
+            </div>
+            <div class="input-box">
+                <input type="password" placeholder="password" name="password" required>
+            </div>
+            <div class="remember-forget">
+                <label ><input type="checkbox" name="remember me" id="">Remember me</label>
+            </div>
+            <button type="submit" class="btn">Log in</button>
+                
+        </form>
+    </div>
+    </div>
+</body>
+<script src="/js/user-login.js"></script>
+<%- include('../partials/footer')%>

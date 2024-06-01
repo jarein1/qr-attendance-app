@@ -1,0 +1,50 @@
+<%- include('../partials/header')%>
+<link rel="stylesheet" href="/css/admin.css">
+<%- include('../partials/header-closer')%>
+<body>
+    <%- include('../partials/navbar')%>
+    <div class="welcome">
+    <h4>Create Student</h4>
+    </div>
+    <br>
+    <!-- ---------------- Forms ---------------- -->
+        <div class="form">
+            <div class="Details">
+            <form action="/admin/create-student" method="post">
+                <label for="fname">First name:</label>
+                <input type="text" id="fname" name="firstName" placeholder="First Name">
+                <label for="lname">Last name:</label>
+                <input type="text" id="lname" name="lastName" placeholder="Gurung">
+            </div>
+            <div class="Details">
+                <label for="stu-dept">Department:</label>
+                <select id="stu-dept" name="department">
+                    <option value="" selected>--- SELECT ---</option>
+                    <% departmentList.forEach((dept) => {%>
+                    <option value="<%=dept._id %>"><%=dept.name%></option>
+                    <% }) %>
+                </select>
+                <label for="stu-sem">Semester:</label>
+                <select id="stu-sem" name="semester">
+                    <option value="" selected>--- SELECT ---</option>
+                    <% semesterList.forEach(sem => {%>
+                        <option value="<%=sem.value%>"><%=sem.semester%></option>
+                    <% })%>
+                </select>
+            </div>
+            <div class="Details">
+                <label for="stu-email">Email:</label>
+                <input type="email" id="stu-email" name="email" placeholder="Data Science">
+                <label for="stu-pass">Password:</label>
+                <input type="password" id="stu-pass" name="password" placeholder="password">
+            </div>
+            <div class="gene">
+                <div class="generate" >
+                    <button type="submit" >Create</button>
+                </div>
+            </div>
+            </form> 
+        </div>
+    
+</body>
+<%- include('../partials/footer')%>

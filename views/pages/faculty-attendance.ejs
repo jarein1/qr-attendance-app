@@ -1,0 +1,70 @@
+<%- include('../partials/header')%>
+<link rel="stylesheet" href="/css/admin.css">
+<%- include('../partials/header-closer')%>
+<body>
+    <%- include('../partials/navbar')%>
+    <div class="welcome">
+        <h4>Check Atendance</h4>
+    </div>
+    <br>
+    <!-- ---------------- Manage Student ---------------- -->
+    <div class="Details">
+    <form id="attendance-form">
+    <div class="sem">
+        <div class="select-menu">
+            <div class="course">Course: </div>  
+            <select name="courseId">
+                <option value="">---SELECT---</option>
+                <% courseList.forEach((course, index) => {%>
+                <option value="<%=course.course_id%>"><%=course.name%></option>
+                <% })%>
+            </select>
+        </div>
+    </div>
+    <div class="sem">
+        <div class="select-menu">
+            <div class="course">Department: </div>  
+            <select name="departmentId">
+                <option value="">---SELECT---</option>
+                <% departmentList.forEach((department, index) => {%>
+                <option value="<%=department.department_id%>"><%=department.name%></option>
+                <% })%>
+            </select>
+        </div>
+    </div>
+    
+    <div class="sem">
+        <div class="select-menu">
+            <div class="course">Semester: </div>  
+            <select name="semester">
+                <option value="">---SELECT---</option>
+                <% semesterList.forEach((semester, index) => {%>
+                <option value="<%=semester.value%>"><%=semester.semester%></option>
+                <% })%>
+            </select>
+        </div>
+    </div>
+    </div>
+    <br>
+    <div class="check">
+        <a class="generate">
+            <button type="submit">Check</button>
+        </a>
+    </div>
+    </form>
+    <br>
+    <div class="tables">
+    
+        <table id="attendance-table">
+            <tr>
+                <th>Roll no.</th>
+                <th>Student Name</th>
+                <th>Total Classes</th>
+                <th>Attended Classes</th>
+                <th>Percentage</th>
+            </tr>
+        </table>
+     </div>
+    </body>
+<script src="/js/facultyAttendance.js"></script>
+<%- include('../partials/footer')%>
