@@ -42,7 +42,7 @@ app.use(userRouter);
 
 mongoose
   .connect(
-    `mongodb+srv://${process.env.ATLAS_USER_NAME}:${process.env.ATLAS_PASSWORD}@cluster0.sgp4bez.mongodb.net/${process.env.ATLAS_DB}?retryWrites=true&w=majority`
+    `mongodb+srv://${process.env.ATLAS_USER_NAME}:${process.env.ATLAS_PASSWORD}@cluster0.${process.env.ATLAS_CODE}.mongodb.net/${process.env.ATLAS_DB}?retryWrites=true&w=majority`
   )
   .then(() => {
     app.listen(3000 || process.env.port);
